@@ -147,6 +147,8 @@ window.addEventListener("scroll", () => {
 const questions = document.querySelectorAll(".question");
 const allAnswerWrappers = document.querySelectorAll(".answer-wrapper");
 const allQuestionsText = document.querySelectorAll(".question-text");
+const allPlusIcons = document.querySelectorAll(".plus-icon");
+const allMinusIcons = document.querySelectorAll(".minus-icon");
 
 questions.forEach((question) => {
   question.addEventListener("click", (e) => {
@@ -158,13 +160,20 @@ questions.forEach((question) => {
     const plusIcon = question.querySelector(".plus-icon");
     const minusIcon = question.querySelector(".minus-icon");
 
-
     allAnswerWrappers.forEach((singleWrapper) => {
       singleWrapper.style.height = "0px";
     });
 
     allQuestionsText.forEach((questionText) => {
       questionText.classList.remove("blue");
+    });
+
+    allPlusIcons.forEach((plusIcon) => {
+      plusIcon.style.display = "block";
+    });
+
+    allMinusIcons.forEach((minusIcon) => {
+      minusIcon.style.display = "none";
     });
 
     if (answerWrapperHeight === 0) {
