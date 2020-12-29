@@ -965,3 +965,30 @@ header.fixed {
     overflow: hidden;
     transition: var(--transition);
 }
+
+/* go to top icon */
+.goToTop {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.goToTop button {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.goToTop.showBtn {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.goToTop i {
+    font-size: 20px;
+}

@@ -2,6 +2,7 @@
 const navToggler = document.querySelector(".nav-toggler");
 const linksContainer = document.querySelector(".links-container");
 const navLinks = document.querySelectorAll(".nav-link");
+const goToTop = document.querySelector(".goToTop");
 
 navToggler.addEventListener("click", () => {
   linksContainer.classList.toggle("show-links");
@@ -29,9 +30,19 @@ window.addEventListener("scroll", (e) => {
   if (window.pageYOffset > 100) {
     navTop.classList.add("hide");
     header.classList.add("fixed");
+    goToTop.classList.add("showBtn");
   } else {
     navTop.classList.remove("hide");
     header.classList.remove("fixed");
+    goToTop.classList.remove("showBtn");
+  }
+});
+
+window.addEventListener("scroll", (e) => {
+  if (window.pageYOffset > 500) {
+    goToTop.classList.add("showBtn");
+  } else {
+    goToTop.classList.remove("showBtn");
   }
 });
 
