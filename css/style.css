@@ -814,11 +814,11 @@ header.fixed {
 .team .team-members .team-member .details {
     position: absolute;
     width: 100%;
-    background-color: rgba(0, 0, 0, .5);
-    bottom: -20%;
+    background-color: rgba(0, 0, 0, .4);
+    bottom: -15%;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: .5rem 0;
     transition: var(--transition);
 }
 
@@ -828,10 +828,10 @@ header.fixed {
 
 .team .team-members .team-member .details h3 {
     margin-bottom: .15rem;
-    font-size: 24px;
+    font-size: 20px;
 }
 
-.team .team-members .team-member .details h4 {
+.team .team-members .team-member .details h5 {
     margin-bottom: 1rem;
     font-style: italic;
 }
