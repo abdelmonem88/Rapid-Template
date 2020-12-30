@@ -815,7 +815,7 @@ header.fixed {
     position: absolute;
     width: 100%;
     background-color: rgba(0, 0, 0, .5);
-    transform: translateY(-70%);
+    bottom: -20%;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -823,7 +823,7 @@ header.fixed {
 }
 
 .team .team-members .team-member:hover .details {
-    transform: translateY(-103%);
+    bottom: 0;
 }
 
 .team .team-members .team-member .details h3 {
