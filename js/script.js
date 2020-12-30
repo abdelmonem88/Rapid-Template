@@ -39,7 +39,7 @@ window.addEventListener("scroll", (e) => {
 });
 
 window.addEventListener("scroll", (e) => {
-  if (window.pageYOffset > 500) {
+  if (window.pageYOffset > 600) {
     goToTop.classList.add("showBtn");
   } else {
     goToTop.classList.remove("showBtn");
