@@ -21,6 +21,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
+    color: var(--mainColor);
 }
 
 a {
@@ -151,7 +152,7 @@ header.fixed {
 .nav-bar .nav-header .logo {
     text-transform: uppercase;
     font-size: 2rem;
-    letter-spacing: 1px;
+    letter-spacing: 5px;
     color: var(--mainColor);
 }
 
@@ -469,9 +470,15 @@ header.fixed {
     line-height: 1.8;
 }
 
-@media (max-width:320px) {
+@media (max-width:767px) {
     .services .services-container .single-service {
-        width: 80%;
+        width: 45%;
+    }
+}
+
+@media (max-width:575px) {
+    .services .services-container .single-service {
+        width: 90%;
         margin: 0 auto;
     }
 }
@@ -665,7 +672,7 @@ header.fixed {
 }
 
 .portfolio .images .images-filters {
-    width: 25%;
+    width: 30%;
     margin: auto;
     justify-content: space-around;
     margin-bottom: 3rem;
@@ -718,22 +725,23 @@ header.fixed {
     display: none;
 }
 
-
-
-@media (max-width:320px) {
-    .portfolio .images .images-filters {
-        width: 60%;
-    }
-}
-@media (max-width:575px) {
-    .portfolio .images .images-container {
-        column-count: 1;
-    }
-}
 @media (max-width:767px) {
+    .portfolio .images .images-filters {
+        width: 40%;
+    }
     .portfolio .images .images-container {
         column-count: 2;
         min-height: 600px;
+    }
+}
+
+@media (max-width:575px) {
+    .portfolio .images .images-filters {
+        width: 80%;
+    }
+
+    .portfolio .images .images-container {
+        column-count: 1;
     }
 }
 
@@ -1016,6 +1024,184 @@ header.fixed {
     }
 }
 
+/* contact us section */
+.contact-us {
+    background-color: var(--section-alt);
+}
+
+.contact-us .wrapper .contact-details, 
+.contact-us .wrapper .contact-form {
+    width: 49%;
+}
+
+.contact-us .wrapper .contact-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-us .wrapper .contact-details .left,
+.contact-us .wrapper .contact-details .right {
+    width: 45%;
+}
+
+.contact-us .wrapper .contact-details h1,
+.contact-us .wrapper .contact-details h3,
+.contact-us .wrapper .contact-details .left p,
+.contact-us .wrapper .contact-details .right .links,
+.contact-us .wrapper .contact-form h3 {
+    margin-bottom: 2rem;
+}
+
+.contact-us .wrapper .contact-details .left h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    color: var(--mainColor);
+}
+
+.contact-us .wrapper .contact-details h1 + p {
+    line-height: 1.8;
+}
+
+.contact-us .wrapper h3 {
+    text-transform: uppercase;
+}
+
+.contact-us .wrapper .contact-details .left input,
+.contact-us .wrapper .contact-form input,
+.contact-us .wrapper .contact-form textarea {
+    padding: .25rem;
+    height: 2.5rem;
+    font-size: 18px;
+    border: 1px solid #ddd;
+}
+
+.contact-us .wrapper .contact-details .left input {
+    width: 60%;
+}
+
+.contact-us .wrapper .contact-details .left button {
+    display: block;
+    padding: .5rem;
+    font-size: 18px;
+    background-color: var(--secondaryColor);
+    color: #fff;
+    transition: var(--transition);
+}
+
+.contact-us .wrapper .contact-details .right .links li {
+    margin-bottom: 1rem;
+}
+
+.contact-us .wrapper .contact-details .right .links li a {
+    color: var(--mainColor);
+    text-transform: capitalize;
+    transition: var(--transition);
+}
+
+.contact-us .wrapper .contact-details .right .links li a:hover {
+    color: var(--secondaryColor);
+}
+
+.contact-us .wrapper .contact-details .right span {
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.contact-us .wrapper .contact-details .right .social-media-links {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.contact-us .wrapper .contact-details .right .social-media-links li {
+    background-color: var(--secondaryColor);
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.contact-us .wrapper .contact-details .right .social-media-links li:hover,
+.contact-us .wrapper .contact-details .left button:hover {
+    background-color: #0888ac;
+}
+
+.contact-us .wrapper .contact-details .right .social-media-links li a {
+    color: #fff;
+}
+
+
+.contact-us .wrapper p {
+    margin-bottom: 1.5rem;
+}
+
+.contact-us .wrapper .contact-details .right p {
+    margin-bottom: 0;
+}
+
+.contact-us .wrapper .contact-form input,
+.contact-us .wrapper .contact-form textarea {
+    width: 100%;
+    padding: .5rem;
+    margin-bottom: 1rem;
+
+}
+
+.contact-us .wrapper .contact-form input::placeholder,
+.contact-us .wrapper .contact-form textarea::placeholder {
+    color: #aaa;
+    font-size: 16px;
+}
+
+.contact-us .wrapper .contact-form textarea {
+    height: 150px;
+}
+
+.contact-us .wrapper .contact-form button {
+    display: block;
+    margin: auto;
+    text-transform: capitalize;
+}
+
+@media (max-width : 991px) {
+    .contact-us .wrapper {
+        flex-direction: column;
+    }
+
+    .contact-us .wrapper .contact-details,
+    .contact-us .wrapper .contact-form {
+        width: 100%;
+    }
+}
+
+@media (max-width : 767px) {
+    .contact-us .wrapper .contact-details {
+        flex-direction: column;
+    }
+
+    .contact-us .wrapper .contact-details .left,
+    .contact-us .wrapper .contact-details .right {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .contact-us .wrapper .contact-details .right .social-media-links {
+        max-width: 40%;
+    }
+
+}
+@media (max-width : 575px) {
+    .contact-us .wrapper .contact-details .right .social-media-links {
+        max-width: 60%;
+    }
+}
+    
 /* go to top icon */
 .goToTop {
     position: fixed;
