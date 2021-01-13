@@ -8,10 +8,11 @@
     outline: unset;
 }
 
+
 :root {
     --mainColor:#403e66;
     --secondaryColor:#1ab1dc;
-    --transition : all .5s ease;
+    --transition : .2s ease;
     --section-alt: #f4f7fd;
 }
 
@@ -22,6 +23,11 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
     color: var(--mainColor);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat",sans-serif;
+    font-weight: 400;
 }
 
 a {
@@ -39,6 +45,10 @@ button {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.owl-theme .owl-dots .owl-dot.active span{
+    background-color: var(--secondaryColor);
 }
 
 /* comman styles */
@@ -111,7 +121,7 @@ img {
 .section-title h2 {
     color: var(--mainColor);
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 700;
     text-transform: capitalize;
     letter-spacing: 1px;
     margin-bottom: 1rem;
@@ -178,15 +188,15 @@ header.fixed {
     flex-direction: column;
 }
 
-.nav-bar .links-container .links a {
+.nav-bar .links-container .links .nav-item .nav-link {
     color: var(--mainColor);
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     transition: var(--transition);
 }
 
-.nav-bar .links-container .links a:hover{
+.nav-bar .links-container .links .nav-item .nav-link:hover{
     color: var(--secondaryColor);
 }
 
@@ -209,16 +219,18 @@ header.fixed {
     }
     
     .nav-top .social-media-item {
-        margin-left: 1rem;
+        margin-left: 1.75rem;
     }
     
     .nav-top .social-media-item .social-media-link {
+        font-size: 14px;
         color: var(--mainColor);
         cursor: pointer;
         transition: var(--transition);
     }
     
-    .nav-top .social-media-item .social-media-link:hover{
+    .nav-top .social-media-item .social-media-link:hover,
+    .nav-bar .links-container .links .dropdown-menu .dropdown a:hover{
         color: var(--secondaryColor);
     }
 
@@ -233,25 +245,25 @@ header.fixed {
         flex-direction: row;
     }
     
-    .nav-bar .links-container .links .nav-item a {
+    .nav-bar .links-container .links .nav-item .nav-link {
         margin-left: 1.5rem;
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: 600;
         letter-spacing: 1px;
-        transition: var(--transition);
-    }
-    
-    .nav-bar .links-container .links a:hover {
-        color: var(--secondaryColor);
-    }    
-
-    .nav-bar .links-container .links .nav-link.active {
-        color: var(--secondaryColor);
     }
 
     .nav-bar .nav-header .nav-toggler {
         display: none;
+    }
+
+    .nav-bar .links-container .links .nav-item.menu {
+        position: relative;
+        white-space: nowrap;
+    }
+
+    .nav-bar .links-container .links .nav-item.menu .submenu {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        z-index: 999;
     }
 }
 

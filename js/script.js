@@ -15,13 +15,6 @@ navLinks.forEach((navLink) => {
   });
 });
 
-linksContainer.addEventListener("click", (e) => {
-  navLinks.forEach((navLink) => {
-    navLink.classList.remove("active");
-  });
-  e.target.classList.add("active");
-});
-
 //fixed nav
 const navTop = document.getElementById("nav-top");
 const header = document.querySelector("header");
@@ -152,6 +145,13 @@ window.addEventListener("scroll", () => {
       });
     }
   });
+});
+
+linksContainer.addEventListener("click", (e) => {
+  navLinks.forEach((navLink) => {
+    navLink.classList.remove("active");
+  });
+  e.target.classList.add("active");
 });
 
 //questions section accordion
