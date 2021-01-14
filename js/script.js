@@ -6,6 +6,7 @@ const goToTop = document.querySelector(".goToTop");
 
 navToggler.addEventListener("click", () => {
   linksContainer.classList.toggle("show-links");
+  header.classList.toggle("fixed");
 });
 
 //close navbar while click on navlinks
