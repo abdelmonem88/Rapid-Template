@@ -3,16 +3,25 @@ const navToggler = document.querySelector(".nav-toggler");
 const linksContainer = document.querySelector(".links-container");
 const navLinks = document.querySelectorAll(".nav-link");
 const goToTop = document.querySelector(".goToTop");
+const sideBar = document.querySelector("#side-bar");
+const aside = document.querySelector("aside");
+const closeIcon = document.querySelector(".close");
+const asideLinks = document.querySelectorAll(".side-link");
 
 navToggler.addEventListener("click", () => {
-  linksContainer.classList.toggle("show-links");
-  header.classList.toggle("fixed");
+  sideBar.classList.toggle("show");
+  aside.classList.toggle("show");
 });
 
-//close navbar while click on navlinks
-navLinks.forEach((navLink) => {
-  navLink.addEventListener("click", (e) => {
-    linksContainer.classList.remove("show-links");
+closeIcon.addEventListener("click", () => {
+  sideBar.classList.toggle("show");
+  aside.classList.toggle("show");
+});
+
+//close sidebar while click on sidelinks
+asideLinks.forEach((asideLink) => {
+  asideLink.addEventListener("click", (e) => {
+    sideBar.classList.remove("show");
   });
 });
 
@@ -142,6 +151,22 @@ window.addEventListener("scroll", () => {
         navLink.classList.remove("active");
         if (navLink.getAttribute("href") === `#${sectionID}`) {
           navLink.classList.add("active");
+        }
+      });
+    }
+  });
+});
+
+//sync sidelinks with section to add active class
+window.addEventListener("scroll", () => {
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionID = section.getAttribute("id");
+    if (window.scrollY > sectionTop - 50) {
+      asideLinks.forEach((sidelink) => {
+        sidelink.classList.remove("active");
+        if (sidelink.getAttribute("href") === `#${sectionID}`) {
+          sidelink.classList.add("active");
         }
       });
     }
